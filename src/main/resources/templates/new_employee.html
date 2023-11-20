@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+span {
+	color: red;
+	font-style: italic;
+}
+</style>
+</head>
+<body>
+	<div align="center">
+		<h1>Add Employee</h1>
+		<br />
+		<form action="#" th:action="@{/saveEmployee}" th:object="${employee}"
+			method="post">
+			<table border="0" cellpadding="10">
+				<tr>
+					<td>Emp ID</td>
+					<td><input type="text" th:field="*{employeePK.empId}"></td>
+					<td><span th:if="${#fields.hasErrors('employeePK.empId')}"
+						th:errors="*{employeePK.empId}"></span></td>
+				</tr>
+				<tr>
+					<td>Emp Name</td>
+					<td><input type="text" th:field="*{empName}"></td>
+					<td><span
+						th:if="${#fields.hasErrors('empName')}"
+						th:errors="*{empName}"></span></td>
+				</tr>
+				<tr>
+					<td>Emp Email</td>
+					<td><input type="text" th:field="*{employeePK.empEmailId}"></td>
+					<td><span
+						th:if="${#fields.hasErrors('employeePK.empEmailId')}"
+						th:errors="*{employeePK.empEmailId}"></span></td>
+				</tr>
+				<tr>
+
+					<td>Emp Phone</td>
+					<td><input type="text" th:field="*{empPhone}"></td>
+					<td><span th:if="${#fields.hasErrors('empPhone')}"
+						th:errors="*{empPhone}"></span></td>
+				</tr>
+				<tr>
+					<td>Emp Desg</td>
+					<td><input type="text" th:field="*{empDesg}"></td>
+					<td><span th:if="${#fields.hasErrors('empDesg')}"
+						th:errors="*{empDesg}"></span></td>
+				</tr>
+				<tr>
+					<td><button type="submit">Add Employee</button></td>
+				</tr>
+
+
+			</table>
+		</form>
+
+	</div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<div>
+		<h1>Add Employee</h1>
+		<form action="#" th:action="@{/updateEmployee}"
+			th:object="${employee}" method="post">
+			<table border="0" cellpadding="10">
+				<tr>
+					<td>Emp ID</td>
+					<td><input type="text" th:field="*{employeePK.empId}"></td>
+				</tr>
+				<tr>
+					<td>Emp Name</td>
+					<td><input type="text" th:field="*{empName}"></td>
+				</tr>
+				<tr>
+					<td>Emp Email</td>
+					<td><input type="text" th:field="*{employeePK.empEmailId}"></td>
+				</tr>
+				<tr>
+					<td>Emp Phone</td>
+					<td><input type="text" th:field="*{empPhone}"></td>
+				</tr>
+				<tr>
+					<td>Emp Desg</td>
+					<td><input type="text" th:field="*{empDesg}"></td>
+				</tr>
+				<tr>
+					<td><button type="submit">Update Employee</button></td>
+				</tr>
+			</table>
+		</form>
+
+	</div>
+</body>
+</html>

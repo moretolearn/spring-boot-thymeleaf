@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Employee CURD</title>
+</head>
+<body>
+	<div align="center">
+		<h1>Employee List</h1>
+		<a href="/newEmployee">Add Employee</a> <br /> <br />
+		<table border="1" cellpadding="10">
+			<thead>
+				<tr>
+					<th>EmpId</th>
+					<th>EmpName</th>
+					<th>EmpEmail</th>
+					<th>EmpPhone</th>
+					<th>EmpDesg</th>
+					<th>Curd</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="employee : ${allEmployees}">
+					<td th:text="${employee.employeePK.empId}"></td>
+					<td th:text="${employee.empName}"></td>
+					<td th:text="${employee.employeePK.empEmailId}"></td>
+					<td th:text="${employee.empPhone}"></td>
+					<td th:text="${employee.empDesg}"></td>
+					<td><a
+						th:href="@{'/editEmployee/'+${employee.employeePK.empId}+'/'+${employee.employeePK.empEmailId}}">Edit</a>
+						<a
+						th:href="@{'/deleteEmployee/'+${employee.employeePK.empId}+'/'+${employee.employeePK.empEmailId}}">Delete</a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>
